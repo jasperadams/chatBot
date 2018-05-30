@@ -23,11 +23,24 @@ function chat() {
     else if (qNum === 1) {
         $("#output").html('<h1>' + input + '? ok that is a 14/15 </h1>');
         $('#input').val("");
-        question = '<h1>what is your favorite type of meme?</h1>';
+        question = '<h1>how would you describe the difficulty of this class?</h1>';
         setTimeout(timedQuestion, 2000);
     }
 
     else if (qNum === 2) {
+        if(input.toLowerCase().includes("hard")) {
+            $("#output").html("");
+            $('#img').attr('src', 'img/twss.gif');
+            setTimeout(timedImage, 3000);
+        } else {
+            $("#output").html('<h1>wow sorry to hear that</h1>');
+        }
+        $('#input').val("");
+        question = '<h1>what is your favorite type of meme?</h1>';
+        setTimeout(timedQuestion, 4000);
+    }
+
+    else if (qNum === 3) {
         if(input.toLowerCase().includes("albinson")){
             $("#output").html('<h1> hey i like albinson memes too!</h1>');
         } else if(input.toLowerCase().includes("memes") || input.includes("ones")) {
@@ -36,19 +49,6 @@ function chat() {
             $("#output").html('<h1> i guess ' + input + ' is cool ... i like albinson memes</h1>');
         } else {
             $("#output").html('<h1> i guess ' + input + ' memes are cool ... i like albinson memes</h1>');
-        }
-        $('#input').val("");
-        question = '<h1>how would you describe the difficulty of this class?</h1>';
-        setTimeout(timedQuestion, 4000);
-    }
-
-    else if (qNum === 3) {
-        if(input.toLowerCase().includes("hard")) {
-            $("#output").html("");
-            $('#img').attr('src', 'img/twss.gif');
-            setTimeout(timedImage, 3000);
-        } else {
-            $("#output").html('<h1>wow sorry to hear that</h1>');
         }
         $('#input').val("");
         question = '<h1>how many times have you played slither.io this week?</h1>';
