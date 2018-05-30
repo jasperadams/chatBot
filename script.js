@@ -8,6 +8,7 @@ $(document).ready(function() {
     $("#output").html(question);
 });
 
+
 function chat() {
     var input = $("#input ").val();
     console.log(input);
@@ -37,11 +38,24 @@ function chat() {
             $("#output").html('<h1> i guess ' + input + ' memes are cool ... i like albinson memes</h1>');
         }
         $('#input').val("");
-        question = '<h1>how many times have you played slither.io this week?</h1>';
+        question = '<h1>how would you describe the difficulty of this class?</h1>';
         setTimeout(timedQuestion, 4000);
     }
 
     else if (qNum === 3) {
+        if(input.toLowerCase().includes("hard")) {
+            $("#output").html("");
+            $('#img').attr('src', 'img/twss.gif');
+            setTimeout(timedImage, 3000);
+        } else {
+            $("#output").html('<h1>wow sorry to hear that</h1>');
+        }
+        $('#input').val("");
+        question = '<h1>how many times have you played slither.io this week?</h1>';
+        setTimeout(timedQuestion, 3000);
+    }
+
+    else if (qNum === 4) {
         if(input == "0" || input == "none") {
             $("#output").html('<h1>you are defintely lying. even I play slither</h1>');
         } else if(isNaN(input) == false) {
@@ -54,7 +68,7 @@ function chat() {
         setTimeout(timedQuestion, 3000);
     }
 
-    else if (qNum === 4) {
+    else if (qNum === 5) {
         console.log(input);
         if(input.toLowerCase().includes("yes")){
             $("#output").html('<h1>really? then you must have been JUULing with him in the bathroom</h1>');
@@ -69,7 +83,7 @@ function chat() {
         setTimeout(timedQuestion, 4000);
     }
 
-    else if (qNum === 5) {
+    else if (qNum === 6) {
         if (input.toLowerCase().includes("holston")) {
             $("#output").html('<h1>yes, mr holston is terrible</h1>');
         } else if(input.toLowerCase().includes("you")) {
@@ -82,7 +96,7 @@ function chat() {
         setTimeout(timedQuestion, 3500);
     }
 
-    else if (qNum === 6) {
+    else if (qNum === 7) {
         if(input.toLowerCase() == "cornhub") {
             $("#output").html('<h1>ok here you go: </h1><iframe src="https://cornhubpremium.blog/" height="500" width="500"></iframe>');
         } else {
@@ -93,12 +107,13 @@ function chat() {
         setTimeout(timedQuestion, 5000);
     }
 
-    else if (qNum === 7) {
+
+    else if (qNum === 8) {
         if(input.toLowerCase() == "yes"){
             $("#output").html('<h1>here you go lol</h1>');
             $('#img').attr('src', 'img/back.png');
         }
-        else if(input.toLowerCase() == "no"){
+        else if(input.yetoLowerCase() == "no"){
             $("#output").html('<h1>here you go anyway lol</h1>');
             $('#img').attr('src', 'img/back.png');
 
@@ -112,7 +127,7 @@ function chat() {
         setTimeout(timedQuestion, 3000);
     }
 
-    else if (qNum === 8) {
+    else if (qNum === 9) {
         if(input.toLowerCase() == "yes"){
             $("#output").html('<h1>ok, then press enter</h1>');
         }
@@ -123,13 +138,13 @@ function chat() {
         }        $('#input').val("");
     }
 
-    else if (qNum === 9) {
+    else if (qNum === 10) {
         var num = Math.floor(Math.random() * 26) + 14;
         var img = '<img src="meme/ALBY%20(' + num + ').jpg" width=428 height="240">';
         console.log(img);
         $("#output").html(img);
         $('#input').val("");
-        qNum = 8;
+        qNum = 9;
     }
 
 }
