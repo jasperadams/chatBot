@@ -8,6 +8,13 @@ $(document).ready(function() {
     $("#output").html(question);
 });
 
+function timer(time){
+    var t = setTimeout(timedQuestion, time);
+    $(document).keypress(function(e) {
+        clearTimeout(t);
+    });
+}
+
 
 function chat() {
     var input = $("#input ").val();
@@ -20,7 +27,7 @@ function chat() {
         }
         $('#input').val("");
         question = '<h1>how much of your last assignment did you do?</h1>';
-        setTimeout(timedQuestion, 2400);
+        timer(2400);
     }
 
     else if (qNum === 1) {
@@ -30,7 +37,7 @@ function chat() {
         }
         $('#input').val("");
         question = '<h1>how would you describe the difficulty of this class?</h1>';
-        setTimeout(timedQuestion, 2400);
+        timer(2400);
     }
 
     else if (qNum === 2) {
@@ -40,7 +47,7 @@ function chat() {
         }
         $('#input').val("");
         question = '<h1>what is your favorite type of meme?</h1>';
-        setTimeout(timedQuestion, 2400);
+        timer(2400);
     }
 
     else if (qNum === 3) {
@@ -58,7 +65,7 @@ function chat() {
         }
         $('#input').val("");
         question = '<h1>how many times have you played slither.io this week?</h1>';
-        setTimeout(timedQuestion, 3500);
+        timer(3500);
     }
 
     else if (qNum === 4) {
@@ -74,7 +81,7 @@ function chat() {
         }
         $('#input').val("");
         question = '<h1>have you seen otis recently?</h1>';
-        setTimeout(timedQuestion, 3000);
+        timer(3500);
     }
 
     else if (qNum === 5) {
@@ -91,7 +98,7 @@ function chat() {
         }
         $('#input').val("");
         question = '<h1>who is the worst teacher at berkeley high?</h1>';
-        setTimeout(timedQuestion, 4000);
+        timer(3500);
     }
 
     else if (qNum === 6) {
@@ -107,7 +114,7 @@ function chat() {
         }
         $('#input').val("");
         question = '<h1>what is your favorite website?</h1>';
-        setTimeout(timedQuestion, 3500);
+        timer(3500);
     }
 
     else if (qNum === 7) {
@@ -121,7 +128,7 @@ function chat() {
         }
         $('#input').val("");
         question = '<h1>want to see my backend?</h1>';
-        setTimeout(timedQuestion, 5000);
+        timer(5000);
     }
 
 
@@ -144,7 +151,7 @@ function chat() {
         $('#input').val("");
         question = '<h1>want to see some memes?</h1>';
         setTimeout(timedImage, 3000);
-        setTimeout(timedQuestion, 3000);
+        timer(3000);
     }
 
     else if (qNum === 9) {
@@ -209,22 +216,6 @@ function topLevel(){
 }
 
 
-function Timer(callback, delay) {
-    var timerId, start, remaining = delay;
-
-    this.pause = function() {
-        window.clearTimeout(timerId);
-        remaining -= new Date() - start;
-    };
-
-    this.resume = function() {
-        start = new Date();
-        window.clearTimeout(timerId);
-        timerId = window.setTimeout(callback, remaining);
-    };
-
-    this.resume();
-}
 
 function timedQuestion() {
     $("#output").html(question);
