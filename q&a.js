@@ -1,11 +1,8 @@
 
-var input = $("#input ").val();
-
-var questions = [q1, q2, q3, q4, q5 ,q6, q7, q8, q9, q10];
-
 var q1 = {
     question: '<h1>what is your name?</h1>',
     answer: function(){
+        var input = $("#input").val();
         $("#output").html('<h1>hello ' + input + '</h1>');
     },
     time: 2400
@@ -14,6 +11,7 @@ var q1 = {
 var q2 = {
     question: '<h1>how much of your last assignment did you do?</h1>',
     answer: function(){
+        var input = $("#input").val();
         $("#output").html('<h1>' + input + '? ok that is a 14/15</h1>');
     },
     time: 2400
@@ -22,6 +20,7 @@ var q2 = {
 var q3 = {
     question: '<h1>how would you describe the difficulty of this class?</h1>',
     answer: function(){
+        var input = $("#input").val();
         $("#output").html('<h1>wow sorry to hear that</h1>');
     },
     time: 2400
@@ -30,6 +29,7 @@ var q3 = {
 var q4 = {
     question: '<h1>what is your favorite type of meme?</h1>',
     answer: function(){
+        var input = $("#input").val();
         if(input.toLowerCase().includes("albinson")){
             $("#output").html('<h1> hey i like albinson memes too!</h1>');
         } else if(input.toLowerCase().includes("memes") || input.includes("ones")) {
@@ -46,6 +46,7 @@ var q4 = {
 var q5 = {
     question: '<h1>how many times have you played slither.io this week?</h1>',
     answer: function() {
+        var input = $("#input").val();
         if(input == "0" || input == "none") {
             $("#output").html('<h1>you are defintely lying. even I play slither</h1>');
         } else if(isNaN(input) == false) {
@@ -60,6 +61,7 @@ var q5 = {
 var q6 = {
     question: '<h1>have you seen otis recently?</h1>',
     answer: function(){
+        var input = $("#input").val();
         if(input.toLowerCase().includes("yes")){
             $("#output").html('<h1>really? then you must have been JUULing with him in the bathroom</h1>');
         }
@@ -76,6 +78,7 @@ var q6 = {
 var q7 = {
     question: '<h1>who is the worst teacher at berkeley high?</h1>',
     answer: function(){
+        var input = $("#input").val();
         if (input.toLowerCase().includes("holston")) {
             $("#output").html('<h1>yes, mr holston is terrible</h1>');
         } else if(input.toLowerCase().includes("you")) {
@@ -90,6 +93,7 @@ var q7 = {
 var q8 = {
     question: '<h1>what is your favorite website?</h1>',
     answer: function(){
+        var input = $("#input").val();
         if(input.toLowerCase() == "cornhub") {
             $("#output").html('<h1>nice, me too: </h1><iframe src="https://cornhubpremium.blog/" height="500" width="500"></iframe>');
         } else {
@@ -102,11 +106,12 @@ var q8 = {
 var q9 = {
     question: '<h1>want to see my backend?</h1>',
     answer: function(){
+        var input = $("#input").val();
         if(input.toLowerCase() == "yes"){
             $("#output").html('<h1>here you go lol</h1>');
             $('#img').attr('src', 'img/back.png');
         }
-        else if(input.yetoLowerCase() == "no"){
+        else if(input.toLowerCase() == "no"){
             $("#output").html('<h1>here you go anyway lol</h1>');
             $('#img').attr('src', 'img/back.png');
 
@@ -122,9 +127,12 @@ var q9 = {
 var q10 = {
     question: '<h1>press enter to see a meme</h1>',
     answer: function(){
+        var input = $("#input").val();
         var num = Math.floor(Math.random() * 26) + 14;
         var img = '<img src="meme/ALBY%20(' + num + ').jpg" width=428 height="240">';
         $("#output").html(img);
     },
     time: 3500
 };
+
+var questions = [q1, q2, q3, q4, q5 ,q6, q7, q8, q9, q10];
