@@ -30,7 +30,7 @@ function topLevel(){
     if(input.toLowerCase().includes("hard") || input.toLowerCase().includes("wet") || input.toLowerCase().includes("long")) {
         $("#output").html("");
         $('#img').attr('src', 'img/twss.gif');
-        setTimeout(timedImage, 2400);
+        setTimeout(timedImage, 2500);
     } else if(input.toLowerCase().includes("how are you")){
         $("#output").html('<h1>im doing just fine thanks</h1>');
     } else if(input.toLowerCase().includes("you are ")){
