@@ -10,11 +10,11 @@ function bot(){
     topLevel();
     if(topLevel() === 0){
         $("#output").html(q.answer());
-        $('#input').val("");
-        q = questions[Math.floor(Math.random()*questions.length)];
-        ask = q.question;
-        timer(timedQuestion, 2400);
     }
+    $('#input').val("");
+    q = questions[Math.floor(Math.random()*questions.length)];
+    ask = q.question;
+    timer(timedQuestion, 3500);
 }
 
 function timer(callback, time){
@@ -26,21 +26,19 @@ function timer(callback, time){
 
 function topLevel(){
     var x = 1;
-    var input = $("#input ").val();
+    var input = $("#input").val();
     if(input.toLowerCase().includes("hard") || input.toLowerCase().includes("wet") || input.toLowerCase().includes("long")) {
         $("#output").html("");
         $('#img').attr('src', 'img/twss.gif');
         setTimeout(timedImage, 2400);
-    } else if(input.toLowerCase().includes("where")){
-        $("#output").html('<h1>your moms house</h1>');
-    } else if(input.toLowerCase().includes("when")){
-        $("#output").html('<h1>when hell freezes over</h1>');
     } else if(input.toLowerCase().includes("how are you")){
         $("#output").html('<h1>im doing just fine thanks</h1>');
     } else if(input.toLowerCase().includes("you are ")){
         $("#output").html("");
         $('#img').attr('src', 'img/alrighty.gif');
         setTimeout(timedImage, 2000);
+    } else if(input.toLowerCase().includes("your name")){
+        $("#output").html('<h1>its literally right above my picture -_- </h1>');
     } else if(input.toLowerCase().includes("your mom")){
         $("#output").html("");
         $('#img').attr('src', 'img/squeeze.gif');
@@ -49,11 +47,38 @@ function topLevel(){
         $("#output").html('<h1>did you say backend</h1>');
         $('#img').attr('src', 'img/back.png');
         setTimeout(timedImage, 2400);
+    } else if(input.toLowerCase().includes("what day")){
+        var today = new Date();
+        var date = 'today is '+(today.getMonth()+1)+'-'+today.getDate()+'-'+today.getFullYear();
+        $("#output").html('<h1>' + date + '</h1>');
+    } else if(input.toLowerCase().includes("what time")) {
+        var num = Math.floor(Math.random() * 26) + 14;
+        img = '<img src="meme/ALBY%20(' + num + ').jpg" width=428 height="240">';
+        $("#output").html('<h1>time for a meme!</h1><br>' + img);
+        setTimeout(timedQuestion, 3000);
     } else if(input.toLowerCase().includes("meme")){
         var num = Math.floor(Math.random() * 26) + 14;
         img = '<img src="meme/ALBY%20(' + num + ').jpg" width=428 height="240">';
         $("#output").html('<h1>did you say memes???</h1><br>' + img);
-        setTimeout(timedQuestion, 2400);
+        setTimeout(timedQuestion, 3000);
+    } else if(input.toLowerCase().includes("where")){
+        $("#output").html('<h1>your moms house</h1>');
+    } else if(input.toLowerCase().includes("when")) {
+        $("#output").html('<h1>when hell freezes over</h1>');
+    } else if(input.toLowerCase().includes("what")) {
+        var str = input.toLowerCase().split("");
+        var res = "";
+        for(var i = 0; i < input.length; i++){
+            if(i % 2 === 0){
+                res += str[i].toUpperCase();
+            } else {
+                res += str[i];
+            }
+        }
+        res += '?';
+        $("#output").html('<h1>'+ res +'</h1>');
+        $('#img').attr('src', 'img/sponge.gif');
+        setTimeout(timedImage, 3500);
     } else {
         x = 0;
     }

@@ -48,7 +48,7 @@ var q5 = {
     answer: function() {
         var input = $("#input").val();
         if(input == "0" || input == "none") {
-            $("#output").html('<h1>you are defintely lying. even I play slither</h1>');
+            $("#output").html('<h1>you are definitely lying. even I play slither</h1>');
         } else if(isNaN(input) == false) {
             $("#output").html('<h1>only ' + input + ' times? jasper has played way more than that!</h1>');
         } else {
