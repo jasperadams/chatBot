@@ -39,7 +39,7 @@ function topLevel(){
         setTimeout(timedImage, 2000);
     } else if(input.toLowerCase().includes("your name")){
         $("#output").html('<h1>its literally right above my picture -_- </h1>');
-    } else if(input.toLowerCase().includes("your mom")){
+    } else if(input.toLowerCase().includes("your mom") || input.toLowerCase().includes("suck")){
         $("#output").html("");
         $('#img').attr('src', 'img/squeeze.gif');
         setTimeout(timedImage, 2400);
@@ -65,6 +65,8 @@ function topLevel(){
         $("#output").html('<h1>your moms house</h1>');
     } else if(input.toLowerCase().includes("when")) {
         $("#output").html('<h1>when hell freezes over</h1>');
+    } else if(input.toLowerCase().includes("hi")) {
+        $("#output").html('<h1>yeah hi ok lets move on</h1>');
     } else if(input.toLowerCase().includes("what")) {
         var str = input.toLowerCase().split("");
         var res = "";
