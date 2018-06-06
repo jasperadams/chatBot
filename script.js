@@ -12,7 +12,8 @@ function bot(){
         $("#output").html(q.answer());
     }
     $('#input').val("");
-    q = questions[Math.floor(Math.random()*questions.length)];
+    var index = Math.floor(Math.random()*questions.length);
+    q = questions[index];
     ask = q.question;
     timer(timedQuestion, 3500);
 }
@@ -33,6 +34,8 @@ function topLevel(){
         setTimeout(timedImage, 2500);
     } else if(input.toLowerCase().includes("how are you")){
         $("#output").html('<h1>im doing just fine thanks</h1>');
+    } else if(input.toLowerCase().includes("juul") || input.toLowerCase().includes("vape")){
+        $("#output").html('<h1>otis, is that you???</h1>');
     } else if(input.toLowerCase().includes("you are ")){
         $("#output").html("");
         $('#img').attr('src', 'img/alrighty.gif');
@@ -61,12 +64,18 @@ function topLevel(){
         img = '<img src="meme/ALBY%20(' + num + ').jpg" width=428 height="240">';
         $("#output").html('<h1>did you say memes???</h1><br>' + img);
         setTimeout(timedQuestion, 3000);
-    } else if(input.toLowerCase().includes("where")){
-        $("#output").html('<h1>your moms house</h1>');
+    } else if(input.toLowerCase().includes("hi")) {
+        $("#output").html('<h1>yeah hi ok lets move on</h1>');
+    } else if(input.toLowerCase().includes("d you know")){
+        $("#output").html('<h1>i am all-knowing</h1>');
     } else if(input.toLowerCase().includes("when")) {
         $("#output").html('<h1>when hell freezes over</h1>');
     } else if(input.toLowerCase().includes("hi")) {
         $("#output").html('<h1>yeah hi ok lets move on</h1>');
+    } else if(input.toLowerCase().includes("who")) {
+            $("#output").html('<h1>your mom</h1>');
+    } else if(input.toLowerCase().includes("no i was")) {
+        $("#output").html('<h1>yeah well i dont believe you</h1>');
     } else if(input.toLowerCase().includes("what")) {
         var str = input.toLowerCase().split("");
         var res = "";

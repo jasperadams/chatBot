@@ -49,7 +49,10 @@ var q5 = {
         var input = $("#input").val();
         if(input == "0" || input == "none") {
             $("#output").html('<h1>you are definitely lying. even I play slither</h1>');
-        } else if(isNaN(input) == false) {
+        } else if(input.toLowerCase().includes("jasper")) {
+            $("#output").html('<h1>damn you crazy</h1>');
+        }
+        else if(isNaN(input) == false) {
             $("#output").html('<h1>only ' + input + ' times? jasper has played way more than that!</h1>');
         } else {
             $("#output").html('<h1>' + input + '? jasper has played way more than that!</h1>');
@@ -94,7 +97,7 @@ var q8 = {
     question: '<h1>what is your favorite website?</h1>',
     answer: function(){
         var input = $("#input").val();
-        if(input.toLowerCase() == "cornhub") {
+        if(input.toLowerCase().includes("cornhub")) {
             $("#output").html('<h1>nice, me too: </h1><iframe src="https://cornhubpremium.blog/" height="500" width="500"></iframe>');
         } else {
             $("#output").html('<h1>' + input + '? really? I like this: </h1><iframe src="https://cornhubpremium.blog/" height="500" width="500"></iframe>');
@@ -107,11 +110,11 @@ var q9 = {
     question: '<h1>want to see my backend?</h1>',
     answer: function(){
         var input = $("#input").val();
-        if(input.toLowerCase() == "yes"){
+        if(input.toLowerCase().includes("yes")){
             $("#output").html('<h1>here you go lol</h1>');
             $('#img').attr('src', 'img/back.png');
         }
-        else if(input.toLowerCase() == "no"){
+        else if(input.toLowerCase().includes("no")){
             $("#output").html('<h1>here you go anyway lol</h1>');
             $('#img').attr('src', 'img/back.png');
 
@@ -135,4 +138,4 @@ var q10 = {
     time: 3500
 };
 
-var questions = [q1, q2, q3, q4, q5 ,q6, q7, q8, q9, q10];
+var questions = [q2, q3, q4, q5 ,q6, q7, q8, q9, q10];
