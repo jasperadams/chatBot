@@ -1,6 +1,7 @@
 
 var q = q1;
 var ask;
+var askedQuestion = true;
 
 $(document).ready(function() {
     $("#output").html(q.question);
@@ -8,13 +9,17 @@ $(document).ready(function() {
 
 function bot(){
     topLevel();
-    if(topLevel() === 0){
+    if(topLevel() === 0 && askedQuestion === true){
         $("#output").html(q.answer());
+        askedQuestion = false;
+    } else if (topLevel() === 0){
+        $("#output").html('<h1>lets move on</h1>')
     }
     $('#input').val("");
     var index = Math.floor(Math.random()*questions.length);
     q = questions[index];
     ask = q.question;
+    questions.splice(index, 1);
     timer(timedQuestion, 3500);
 }
 
@@ -72,8 +77,12 @@ function topLevel(){
         $("#output").html('<h1>when hell freezes over</h1>');
     } else if(input.toLowerCase().includes("hi")) {
         $("#output").html('<h1>yeah hi ok lets move on</h1>');
+    } else if(input.toLowerCase().includes("sorry")) {
+        $("#output").html('<h1>you should be sorry</h1>');
     } else if(input.toLowerCase().includes("who")) {
             $("#output").html('<h1>your mom</h1>');
+    } else if(input.toLowerCase().includes("why")) {
+        $("#output").html('<h1>because -_-</h1>');
     } else if(input.toLowerCase().includes("no i was")) {
         $("#output").html('<h1>yeah well i dont believe you</h1>');
     } else if(input.toLowerCase().includes("what")) {
@@ -100,6 +109,7 @@ function topLevel(){
 
 function timedQuestion() {
     $("#output").html(ask);
+    askedQuestion = true;
 }
 
 function timedImage() {
@@ -109,6 +119,9 @@ function timedImage() {
 
 $(document).keypress(function(e) {
     if (e.which === 13) {
+        if(questions.length === 1){
+            questions = [q2, q3, q4, q5 ,q6, q7, q8, q9, q10];
+        }
         bot();
     }
 });
