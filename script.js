@@ -13,7 +13,8 @@ function bot(){
         $("#output").html(q.answer());
         askedQuestion = false;
     } else if (topLevel() === 0){
-        $("#output").html('<h1>you were a mistake</h1>')
+        var rand = Math.floor(Math.random()*randResponse.length);
+        $("#output").html(randResponse[rand])
     }
     $('#input').val("");
     var index = Math.floor(Math.random()*questions.length);

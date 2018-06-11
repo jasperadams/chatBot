@@ -139,3 +139,5 @@ var q10 = {
 };
 
 var questions = [q2, q3, q4, q5 ,q6, q7, q8, q9, q10];
+
+var randResponse = ['<h1>you were a mistake</h1>', '<h1>uh ok</h1>', '<h1>ok lets move on</h1>','<h1>you are a terrible student</h1>','<h1>matteo and jasper are better than you</h1>']
